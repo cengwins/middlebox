@@ -154,6 +154,7 @@ services:
     image: prom/prometheus:${PROMETHEUS_DOCKER_TAG}
     container_name: prometheus
     restart: always
+    user: root
     volumes:
       - ./nats/prometheus/:/etc/prometheus/
       - $PROMETHEUS_STORAGE:/usr/local/share/prometheus
